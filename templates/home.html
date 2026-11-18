@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}SHAHZAIN TECH | Build Smart{% endblock %}
+{% block content %}
+
+<section class="hero hero-new">
+  <div class="hero-content">
+    <p class="eyebrow">DIGITAL PRODUCTS · WEB APPLICATIONS</p>
+    <h1>Build Smart.<br><span>Stay Secure.</span></h1>
+    <p class="lead">Creating modern digital experiences, secure accounts and powerful web applications.</p>
+    <div class="actions">
+      <a class="btn" href="/register">Create Account</a>
+      <a class="btn secondary" href="/login">Sign In</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="visual-glow"></div>
+    <div class="laptop">
+      <div class="laptop-screen">
+        <svg viewBox="0 0 240 190" role="img" aria-label="Cybersecurity shield illustration">
+          <path d="M120 15 L195 42 L185 112 Q170 155 120 178 Q70 155 55 112 L45 42 Z" fill="#071b36" stroke="#078bff" stroke-width="7"/>
+          <path d="M120 35 L175 55 L168 108 Q155 140 120 158 Q85 140 72 108 L65 55 Z" fill="#09294d" stroke="#42aaff" stroke-width="3"/>
+          <rect x="96" y="86" width="48" height="39" rx="7" fill="#078bff"/>
+          <path d="M106 86 V72 A14 14 0 0 1 134 72 V86" fill="none" stroke="#fff" stroke-width="7"/>
+          <circle cx="120" cy="104" r="4" fill="#fff"/>
+          <path d="M120 108 V116" stroke="#fff" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+    <p class="visual-caption">SECURITY · TECHNOLOGY · INNOVATION</p>
+  </div>
+</section>
+
+<section class="grid feature-grid">
+  <article>
+    <div class="feature-icon">✦</div>
+    <h2>Modern Design</h2>
+    <p>Clean and professional digital experiences.</p>
+  </article>
+  <article>
+    <div class="feature-icon">⬡</div>
+    <h2>Secure Accounts</h2>
+    <p>Account features with password hashing and protection.</p>
+  </article>
+  <article>
+    <div class="feature-icon">ϟ</div>
+    <h2>Useful Tools</h2>
+    <p>Building practical tools for everyday needs.</p>
+  </article>
+</section>
+
+<p class="note">Learning project: not yet production-ready. Real deployment requires HTTPS, rate limiting, monitoring, backups and a security review.</p>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel | SHAHZAIN TECH{% endblock %}
+
+{% block content %}
+<section class="admin-page">
+  <div class="admin-heading">
+    <p class="eyebrow">RESTRICTED AREA / ADMIN</p>
+    <h1>Control <span>Center.</span></h1>
+    <p class="auth-subtitle">Manage and monitor registered accounts.</p>
+  </div>
+
+  <div class="admin-summary">
+    <div>
+      <p class="eyebrow">TOTAL ACCOUNTS</p>
+      <h2>{{ users|length }}</h2>
+    </div>
+    <div class="admin-mark">ST</div>
+  </div>
+
+  <div class="admin-users">
+    <h2>Registered Accounts</h2>
+    <div class="admin-table">
+      {% for user in users %}
+      <div class="admin-user-row">
+        <div class="user-avatar">{{ user.username[:1]|upper }}</div>
+        <div class="user-details">
+          <strong>{{ user.username }}</strong>
+          <small>{{ user.created_at }}</small>
+        </div>
+        <span class="role-tag">{{ user.role|title }}</span>
+      </div>
+      {% else %}
+      <p class="auth-subtitle">No accounts registered yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

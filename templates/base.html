@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05070c">
+  <title>{% block title %}SHAHZAIN TECH{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="/">SHAHZAIN <span>TECH</span></a>
+
+  <nav class="main-nav">
+    <a href="/">Home</a>
+
+    {% if session.get('user_id') %}
+      <a href="/dashboard">Dashboard</a>
+      <form class="inline" method="post" action="/logout">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <button class="navbtn" type="submit">Logout</button>
+      </form>
+    {% else %}
+      <a href="/login">Sign In</a>
+      <a class="nav-signup" href="/register">Get Started ↗</a>
+    {% endif %}
+  </nav>
+</header>
+
+<main class="wrap">
+  {% for category, message in get_flashed_messages(with_categories=true) %}
+    <div class="flash {{ category }}">{{ message }}</div>
+  {% endfor %}
+
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  <span>SHAHZAIN <strong>TECH</strong></span>
+  <p>BUILD SMART. STAY SECURE.</p>
+  <small>© 2026 SHAHZAIN TECH. Learning Project.</small>
+</footer>
+
+</body>
+</html>

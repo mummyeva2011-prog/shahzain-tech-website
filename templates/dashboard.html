@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | SHAHZAIN TECH{% endblock %}
+
+{% block content %}
+<section class="dashboard-page">
+  <div class="dashboard-heading">
+    <p class="eyebrow">YOUR WORKSPACE</p>
+    <h1>Welcome back, <span>{{ user.username }}</span></h1>
+    <p class="auth-subtitle">Everything you need, all in one place.</p>
+  </div>
+
+  <div class="dashboard-grid">
+    <article class="dashboard-card">
+      <div class="dashboard-symbol">✦</div>
+      <p class="eyebrow">ACCOUNT</p>
+      <h2>{{ user.username }}</h2>
+      <p>Your SHAHZAIN TECH account is active.</p>
+    </article>
+
+    <article class="dashboard-card">
+      <div class="dashboard-symbol">◇</div>
+      <p class="eyebrow">ACCOUNT ROLE</p>
+      <h2>{{ user.role|title }}</h2>
+      <p>Your current account access level.</p>
+    </article>
+
+    <article class="dashboard-card">
+      <div class="dashboard-symbol">◷</div>
+      <p class="eyebrow">MEMBER SINCE</p>
+      <h2>{{ user.created_at }}</h2>
+      <p>Your account creation date.</p>
+    </article>
+  </div>
+
+  {% if user.role == 'admin' %}
+  <div class="dashboard-action">
+    <div>
+      <p class="eyebrow">ADMIN ACCESS</p>
+      <h2>Manage your platform</h2>
+      <p>Open the administration area.</p>
+    </div>
+    <a class="btn" href="/admin">Open Admin Panel →</a>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}
