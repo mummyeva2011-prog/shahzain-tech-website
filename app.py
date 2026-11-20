@@ -61,6 +61,8 @@ def init_db():
     db.commit()
     db.close()
 
+init_db()
+
 def csrf_token():
     if "_csrf" not in session:
         session["_csrf"] = secrets.token_urlsafe(32)
